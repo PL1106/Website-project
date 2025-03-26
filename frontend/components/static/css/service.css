@@ -50,46 +50,41 @@
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   
-  /* Grows/shrinks for layout, but won't exceed 350px wide */
   flex: 1 1 300px;
   max-width: 350px;
   text-align: center;
 }
 
-/* Bottom container (link + image) pinned at bottom */
 .card-bottom {
   display: flex;
   flex-direction: column; 
-  margin-top: auto; /* pushes this section to bottom of the card */
-  align-items: center; /* center the link + image horizontally */
+  margin-top: auto; 
+  align-items: center; 
 }
 
 .card-bottom .learn-more {
   color: #7c7dff;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 1rem; /* spacing above the image */
+  margin-bottom: 1rem; 
 }
 .card-bottom .learn-more:hover {
   text-decoration: underline;
 }
 
-/* Uniform image sizing */
 .card-bottom img {
   width: 100%;
-  height: 200px;       /* fixed height for consistent sizing */
-  object-fit: cover;   /* crops while preserving aspect ratio */
+  height: 200px;       
+  object-fit: cover;  
   border-radius: 4px;
 }
 
-/* Card Title */
 .service-card h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   color: #333;
 }
 
-/* Card Description */
 .service-card p {
   color: #666;
   margin-bottom: 1rem;

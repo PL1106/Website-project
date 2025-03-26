@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Services</title>
-  <!-- Existing CSS files -->
+
+  <!-- Same CSS order as on your front page -->
   <link rel="stylesheet" href="/components/static/css/main.css">
   <link rel="stylesheet" href="/components/static/css/header.css">
   <link rel="stylesheet" href="/components/static/css/footer.css">
   <link rel="stylesheet" href="/components/header/header-extra.css">
-  
-  <!-- Updated service.css -->
   <link rel="stylesheet" href="/components/static/css/service.css">
 </head>
 <body>
-  <!-- If your header is dynamically loaded, keep your placeholder -->
-  <header class="header"></header>
+  <!-- 1) Header Placeholder (same as front page) -->
+  <div id="header-placeholder"></div>
 
   <!-- Hero / Intro Section -->
   <section class="services-hero">
@@ -30,7 +29,6 @@
 
   <!-- 3 Cards Section -->
   <section class="services-cards">
-    <!-- Card 1 -->
     <div class="service-card">
       <h3>Solar Panels</h3>
       <p>Reliable installation and professional maintenance for the best possible solar energy output.</p>
@@ -39,8 +37,6 @@
         <img src="/components/static/images/left.jpeg" alt="Solar Panels">
       </div>
     </div>
-
-    <!-- Card 2 -->
     <div class="service-card">
       <h3>Renewable Energy</h3>
       <p>Advanced charging solutions for electric vehicles, designed for convenience and efficiency.</p>
@@ -49,8 +45,6 @@
         <img src="/components/static/images/middle.jpeg" alt="Renewable Energy">
       </div>
     </div>
-
-    <!-- Card 3 -->
     <div class="service-card">
       <h3>Smart Homes</h3>
       <p>Integrated systems to monitor and optimise energy usage in your home.</p>
@@ -61,13 +55,22 @@
     </div>
   </section>
 
-  <!-- Footer Placeholder (dynamically loaded) -->
+  <!-- 2) Footer Placeholder (dynamically loaded) -->
   <div id="footer-placeholder"></div>
 
   <!-- JS Files -->
   <script src="/components/js/main.js"></script>
-  <script src="/components/header/header.js" defer></script>
-  
+
+  <!-- 3) Dynamically load the shared header (same approach as front page) -->
+  <script>
+    fetch('/components/header/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading header:', err));
+  </script>
+
   <!-- Dynamically load the shared footer -->
   <script>
     fetch('/components/footer/footer.html')
