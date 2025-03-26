@@ -7,7 +7,6 @@
   padding: 3rem 1rem; /* Generous top/bottom spacing */
 }
 
-/* Small uppercase title (e.g., "OUR SERVICES") */
 .services-hero h2 {
   text-transform: uppercase;
   color: #7c7dff; /* Bluish color */
@@ -16,14 +15,12 @@
   letter-spacing: 1px;
 }
 
-/* Main heading (e.g., "Explore Our Range...") */
 .services-hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #333;
 }
 
-/* Paragraph below heading */
 .services-hero p {
   max-width: 600px;
   margin: 0 auto 2rem;
@@ -34,30 +31,55 @@
 /* Cards Section */
 .services-cards {
   display: flex;
-  flex-wrap: wrap;       /* Allows cards to wrap on smaller screens */
-  justify-content: center;
-  gap: 1.5rem;           /* Space between cards */
+  flex-wrap: wrap;          
+  justify-content: center;  
+  align-items: stretch;     /* Makes each row of cards the same height */
+  gap: 1.5rem;             
   padding: 2rem 1rem;
-  max-width: 1200px;     /* Constrain the width */
-  margin: 0 auto;        /* Center the container horizontally */
+  max-width: 1200px;
+  margin: 0 auto;           
 }
 
-/* Individual Card Styles */
+/* Each Card */
 .service-card {
+  display: flex;
+  flex-direction: column;  /* Stack title, paragraph, then bottom section */
+  
   background-color: #fff;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  flex: 1 1 300px;  /* Minimum 300px width, can expand */
+  
+  /* Grows/shrinks for layout, but won't exceed 350px wide */
+  flex: 1 1 300px;
   max-width: 350px;
   text-align: center;
 }
 
-/* Card Image */
-.service-card img {
-  max-width: 100%;
+/* Bottom container (link + image) pinned at bottom */
+.card-bottom {
+  display: flex;
+  flex-direction: column; 
+  margin-top: auto; /* pushes this section to bottom of the card */
+  align-items: center; /* center the link + image horizontally */
+}
+
+.card-bottom .learn-more {
+  color: #7c7dff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1rem; /* spacing above the image */
+}
+.card-bottom .learn-more:hover {
+  text-decoration: underline;
+}
+
+/* Uniform image sizing */
+.card-bottom img {
+  width: 100%;
+  height: 200px;       /* fixed height for consistent sizing */
+  object-fit: cover;   /* crops while preserving aspect ratio */
   border-radius: 4px;
-  margin-bottom: 1rem;
 }
 
 /* Card Title */
@@ -71,14 +93,4 @@
 .service-card p {
   color: #666;
   margin-bottom: 1rem;
-}
-
-/* "Learn More" Link */
-.service-card a {
-  color: #7c7dff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.service-card a:hover {
-  text-decoration: underline;
 }
