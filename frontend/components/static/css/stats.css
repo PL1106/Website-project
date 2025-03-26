@@ -1,0 +1,27 @@
+/* stats.css */
+
+.stats {
+    width: 100%;
+    margin: 0; /* Removes default spacing around the section */
+    display: flex;
+    justify-content: space-around;
+    background-color: #7cfc7e;
+    padding: 2rem 0; /* Vertical padding (adjust if needed) */
+    text-align: center;
+}
+
+.stat {
+    flex: 1;
+    margin: 0 1 rem; /* Spacing between individual stats */
+}
+
+.stat h2 {
+    font-size: 2.5rem;
+    color: #4F4F4F;
+    margin-bottom: 10px; 
+}
+
+.stat p {
+    color: #4F4F4F;
+    font-size: 1rem;
+}

@@ -1,0 +1,71 @@
+<!-- frontend/services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services</title>
+  <!-- Your existing CSS files -->
+  <link rel="stylesheet" href="/components/static/css/main.css">
+  <link rel="stylesheet" href="/components/static/css/header.css">
+  <link rel="stylesheet" href="/components/static/css/footer.css">
+  <link rel="stylesheet" href="/components/header/header-extra.css">
+  
+  <!-- Updated service.css -->
+  <link rel="stylesheet" href="/components/static/css/service.css">
+</head>
+<body>
+  <!-- If your header is dynamically loaded, you can keep your placeholder -->
+  <header class="header"></header>
+
+  <!-- Hero / Intro Section -->
+  <section class="services-hero">
+    <!-- Smaller uppercase subheading -->
+    <h2>OUR SERVICES</h2>
+    <!-- Main heading -->
+    <h1>Explore Our Range of Solar and Renewable Energy Services</h1>
+    <!-- Subtext paragraph -->
+    <p>
+    Utilise innovation to build a sustainable future. We provide services that lower energy expenses, improve efficiency, and encourage eco-friendly living, ranging from solar solutions to smart home technologies.
+    </p>
+  </section>
+
+  <!-- 3 Cards Section -->
+  <section class="services-cards">
+    <div class="service-card">
+      <img src="/components/static/images/left.jpeg" alt="Solar Panels">
+      <h3>Solar Panels</h3>
+      <p>Reliable installation and professional maintenance for the best possible solar energy output.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="service-card">
+      <img src="/components/static/images/middle.avif" alt="Renewable Energy">
+      <h3>Renewable Energy</h3>
+      <p>Advanced charging solutions for electric vehicles, designed for convenience and efficiency.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="service-card">
+      <img src="/components/static/images/right.jpeg" alt="Smart Homes">
+      <h3>Smart Homes</h3>
+      <p>Integrated systems to monitor and optimise energy usage in your home.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder (dynamically loaded) -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JS Files -->
+  <script src="/components/js/main.js"></script>
+  <script src="/components/header/header.js" defer></script>
+  
+  <!-- Dynamically load the shared footer -->
+  <script>
+    fetch('/components/footer/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
+</body>
+</html>

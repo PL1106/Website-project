@@ -1,0 +1,63 @@
+/* hero.css */
+.hero {
+    position: relative;
+    /* Enough height to show the hero content and some of the stats without scrolling */
+    min-height: 70vh;
+    
+    /* Background image + dark overlay */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                      url('/components/static/images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    /* Flex to center content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-content {
+    /* Left-align the text */
+    text-align: left;
+    
+    /* Control how far from the left edge the text is */
+    margin-left: 50px;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    /* Slightly smaller than before */
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+/* Color classes for specific words */
+.hero-content h1 .white {
+    color: #fff;
+}
+
+.hero-content h1 .green {
+    color: #7cfc7e;
+}
+
+/* "GET STARTED" button */
+.get-started-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: #7cfc7e;
+    color: #fff;
+}

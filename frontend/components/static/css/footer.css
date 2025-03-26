@@ -1,0 +1,66 @@
+.footer {
+    display: flex;
+    padding: 3px;
+    background-color: #d9f1f3;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .footer-section h3 {
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 15px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #666;
+  }
+  
+  .newsletter {
+    flex: 1.5;
+  }
+  
+  .newsletter h3 {
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .newsletter-form {
+    margin-top: 20px;
+  }
+  
+  .newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 15px;
+  }
+  
+  .newsletter-form button {
+    background-color: #7cfc7e;
+    color: #333;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  

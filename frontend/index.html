@@ -1,0 +1,65 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renewable Energy Solutions</title>
+
+  <!-- Your existing CSS files (no old header code!) -->
+  <link rel="stylesheet" href="/components/static/css/main.css">
+  <link rel="stylesheet" href="/components/static/css/header.css">
+  <link rel="stylesheet" href="/components/static/css/hero.css">
+  <link rel="stylesheet" href="/components/static/css/stats.css">
+  <link rel="stylesheet" href="/components/header/header-extra.css">
+</head>
+<body>
+  <!-- 1) Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- 2) Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        <span class="white">Renewable</span><br>
+        <span class="green">Energy Solutions</span><br>
+        <span class="white">for a Future</span>
+      </h1>
+      <a href="services.html" class="get-started-btn">GET STARTED</a>
+    </div>
+  </section>
+
+  <!-- 3) Stats Section -->
+  <section class="stats">
+    <div class="stat">
+      <h2>10+</h2>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat">
+      <h2>5+</h2>
+      <p>Countries Served</p>
+    </div>
+    <div class="stat">
+      <h2>10+</h2>
+      <p>Worldwide Investors</p>
+    </div>
+    <div class="stat">
+      <h2>100+</h2>
+      <p>Finished Projects</p>
+    </div>
+  </section>
+
+  <!-- JS files (no old header code) -->
+  <script src="/components/js/main.js"></script>
+
+  <!-- 4) Dynamically load the shared header -->
+  <script>
+    fetch('/components/header/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading header:', err));
+  </script>
+</body>
+</html>

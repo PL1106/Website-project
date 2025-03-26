@@ -1,0 +1,25 @@
+/* frontend/components/static/css/services-hero.css */
+
+/* Override the .hero background from hero.css */
+.hero {
+    /* Remove or override the hero background image */
+    background-image: none !important;
+    background-color: #edeaff !important; /* or any color you want */
+    background-size: cover; /* optional if you want a color fill */
+    background-position: center; /* optional */
+  
+    /* You can also adjust height/padding if needed: */
+    min-height: auto !important;
+    padding: 2rem 1rem !important;
+  }
+  
+  /* If .hero-content has specific rules from hero.css, override them here: */
+  .hero .hero-content {
+    /* Example overrides */
+    color: #333 !important;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    /* etc. */
+  }
+  

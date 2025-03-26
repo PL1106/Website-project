@@ -1,0 +1,146 @@
+/* header-extra.css */
+
+/* Header Container */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #e6f2ff, #ffffff);
+  padding: 0 4rem;
+  height: 60px;
+}
+
+/* Logo Image */
+.logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Navigation Items Container */
+.new-nav-items {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Center Menu (About, Info Hub, etc.) */
+.center-menu {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 0;
+}
+
+/* Center Menu Links */
+.center-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+
+.center-menu li a:hover {
+  border-bottom-color: #333;
+}
+
+/* Right Menu (Language + Get In Touch) */
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Language Dropdown Wrapper */
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Language Toggle (e.g. "EN ▴") */
+.language-toggle {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Arrow Icon for Dropdown */
+.lang-arrow {
+  font-size: 0.6rem;
+  margin-left: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate Arrow on Hover */
+.language-dropdown:hover .lang-arrow {
+  transform: rotate(180deg);
+}
+
+/* Language Menu (Dropdown) */
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Sits directly below the toggle */
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  min-width: 120px;
+  padding: 0.5rem 0;
+  margin: 0; /* Removed gap to avoid hover issues */
+  list-style: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+
+/* Show Dropdown on Hover */
+.language-dropdown:hover .language-menu,
+.language-dropdown .language-menu:hover {
+  display: block;
+}
+
+/* Language Menu Links */
+.language-menu li a {
+  display: block;
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Hover: Light blue underline + light gray background */
+.language-menu li a:hover {
+  background-color: #f0f0f0;
+  text-decoration: underline;
+  text-decoration-color: #ADD8E6; /* Light blue underline */
+}
+
+.language-menu li a.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+/* "Get In Touch" Button */
+.touch-btn {
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 1.2;
+  font-weight: 500;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.touch-btn:hover {
+  background-color: #ffffff; /* Changes background to white */
+  color: #4F4F4F;          
+  border-color: #9c9c9c;
+}
