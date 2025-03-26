@@ -4,16 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Same CSS order as on your front page -->
+  <!-- Same CSS files as your front page -->
   <link rel="stylesheet" href="/components/static/css/main.css">
   <link rel="stylesheet" href="/components/static/css/header.css">
   <link rel="stylesheet" href="/components/static/css/footer.css">
   <link rel="stylesheet" href="/components/header/header-extra.css">
   <link rel="stylesheet" href="/components/static/css/service.css">
+
+  <!-- Include the new CSS for Recent Works -->
+  <link rel="stylesheet" href="/components/static/css/recent-works.css">
 </head>
 <body>
-  <!-- 1) Header Placeholder (same as front page) -->
+  <!-- 1) Header Placeholder -->
   <div id="header-placeholder"></div>
 
   <!-- Hero / Intro Section -->
@@ -30,38 +34,35 @@
   <!-- 3 Cards Section -->
   <section class="services-cards">
     <div class="service-card">
+      <img src="/components/static/images/left.jpeg" alt="Solar Panels">
       <h3>Solar Panels</h3>
       <p>Reliable installation and professional maintenance for the best possible solar energy output.</p>
-      <div class="card-bottom">
-        <a href="#" class="learn-more">Learn More</a>
-        <img src="/components/static/images/left.jpeg" alt="Solar Panels">
-      </div>
+      <a href="#">Learn More</a>
     </div>
     <div class="service-card">
+      <img src="/components/static/images/middle.jpeg" alt="Renewable Energy">
       <h3>Renewable Energy</h3>
       <p>Advanced charging solutions for electric vehicles, designed for convenience and efficiency.</p>
-      <div class="card-bottom">
-        <a href="#" class="learn-more">Learn More</a>
-        <img src="/components/static/images/middle.jpeg" alt="Renewable Energy">
-      </div>
+      <a href="#">Learn More</a>
     </div>
     <div class="service-card">
+      <img src="/components/static/images/right.jpeg" alt="Smart Homes">
       <h3>Smart Homes</h3>
       <p>Integrated systems to monitor and optimise energy usage in your home.</p>
-      <div class="card-bottom">
-        <a href="#" class="learn-more">Learn More</a>
-        <img src="/components/static/images/right.jpeg" alt="Smart Homes">
-      </div>
+      <a href="#">Learn More</a>
     </div>
   </section>
 
-  <!-- 2) Footer Placeholder (dynamically loaded) -->
+  <!-- 2) Placeholder for the Recent Works Partial (NEW) -->
+  <div id="recent-works-placeholder"></div>
+
+  <!-- 3) Footer Placeholder (dynamically loaded) -->
   <div id="footer-placeholder"></div>
 
   <!-- JS Files -->
   <script src="/components/js/main.js"></script>
 
-  <!-- 3) Dynamically load the shared header (same approach as front page) -->
+  <!-- Dynamically load the shared header -->
   <script>
     fetch('/components/header/header.html')
       .then(response => response.text())
@@ -69,6 +70,16 @@
         document.getElementById('header-placeholder').innerHTML = html;
       })
       .catch(err => console.error('Error loading header:', err));
+  </script>
+
+  <!-- Dynamically load the "Recent Works" partial (NEW) -->
+  <script>
+    fetch('/components/recent-works/recent-works.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('recent-works-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading recent works:', err));
   </script>
 
   <!-- Dynamically load the shared footer -->

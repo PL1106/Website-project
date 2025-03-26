@@ -1,20 +1,30 @@
+/* main.css */
+
+/* Global Reset & Font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-        
+
+/* Optional container class */
 .container {
     display: flex;
     flex-direction: column;
-
 }
 
+/* Utility color classes */
 .white {
     color: white;
 }
 
 .green {
     color: #7cfc7e;
+}
+
+/* Ensure the page can grow vertically & scroll if content is taller than viewport */
+html, body {
+    min-height: 100%;
+    overflow: auto;
 }
