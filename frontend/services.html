@@ -42,7 +42,7 @@
     <div class="service-card">
       <img src="/components/static/images/middle.jpeg" alt="Renewable Energy">
       <h3>Renewable Energy</h3>
-      <p>Advanced charging solutions for electric vehicles, designed for convenience and efficiency.</p>
+      <p>Advanced charging solutions for electric vehicles made for convenience and efficiency.</p>
       <a href="#">Learn More</a>
     </div>
     <div class="service-card">
@@ -74,7 +74,7 @@
 
   <!-- Dynamically load the "Recent Works" partial (NEW) -->
   <script>
-    fetch('/components/recent-works/recent-works.html')
+    fetch('recent-works.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('recent-works-placeholder').innerHTML = html;

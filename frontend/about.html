@@ -1,0 +1,172 @@
+<!-- frontend/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Rolsas Technology</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Same CSS references/order as front page to keep the header identical -->
+  <link rel="stylesheet" href="/components/static/css/main.css">
+  <link rel="stylesheet" href="/components/static/css/header.css">
+  <link rel="stylesheet" href="/components/header/header-extra.css">
+
+  <!-- Additional About page styling (shown below) -->
+  <link rel="stylesheet" href="/components/static/css/about.css">
+</head>
+<body>
+  <!-- 1) Header Placeholder (fetched dynamically & fixed in CSS) -->
+  <div id="header-placeholder"></div>
+
+  <!-- 2) Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <h1>About Rolsas Technology</h1>
+    </div>
+  </section>
+
+  <!-- 3) Two-Column "About" Section -->
+  <section class="about-lower">
+    <div class="left-col">
+      <p class="about-label">ABOUT</p>
+      <h2>Welcome to <br> Rolsas Technology</h2>
+      <div class="logo-box">
+        <!-- Replace with your actual logo file path -->
+        <img src="/components/static/images/logo.png" alt="Rolsas Technology Logo">
+      </div>
+    </div>
+
+    <div class="right-col">
+      <h3>We provide future of energy</h3>
+      <p>
+        Rolsas Technologies is dedicated to giving new and sustainable energy solutions 
+        for modern homes and businesses. We focus on reducing carbon footprints and 
+        increasing energy efficiency with our technology and services.
+      </p>
+      <p>
+        Rolsas Technologies specialises in:
+      </p>
+      <ul>
+        <li>Solar panel installation and maintenance</li>
+        <li>Electric vehicle charging stations</li>
+        <li>Smart home energy management systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4) "How It Works" Section (steps with dotted line, no numbers, no button) -->
+  <section class="how-it-works">
+    <!-- LEFT SIDE: Steps -->
+    <div class="left-side-steps">
+      <p class="section-label">HOW IT WORKS</p>
+      <h2>Let's See How It Works</h2>
+      <p class="intro-text">
+        Our Smart Home Energy Management System helps you reduce your carbon footprint 
+        by monitoring and optimizing your energy usage. From real-time tracking 
+        to automated controls, we make saving energy both simple and effective.
+      </p>
+      
+      <div class="steps-container">
+        <!-- Step 1 (no number) -->
+        <div class="step">
+          <div class="step-details">
+            <h3>Initial Assessment</h3>
+            <p>
+              We begin by evaluating your current energy consumption and identifying 
+              inefficiencies. Then, we create a custom plan to integrate smart devices 
+              that fit your home or business needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 (no number) -->
+        <div class="step">
+          <div class="step-details">
+            <h3>Real-Time Monitoring & Control</h3>
+            <p>
+              Our system continuously tracks your energy usage, automatically 
+              adjusting lighting, HVAC, and other appliances to minimize waste 
+              and keep costs down.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 (no number) -->
+        <div class="step">
+          <div class="step-details">
+            <h3>Continuous Optimization</h3>
+            <p>
+              Through detailed reports and data analytics, we fine-tune your 
+              energy settings, helping you track your carbon footprint reduction 
+              and maximize long-term savings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Just the image -->
+    <div class="right-side-steps">
+      <!-- Replace 'image4.png' with your actual image path -->
+      <img src="/components/static/images/image4.png" alt="Smart Thermostat" class="howitworks-image">
+    </div>
+  </section>
+
+  <!-- 5) Carbon Footprint Calculator Section -->
+  <section class="carbon-calculator">
+    <h2>Carbon Footprint Calculator</h2>
+    <p>Calculate your estimated annual carbon footprint based on your energy usage and travel habits.</p>
+    <form id="footprint-form">
+      <div class="form-group">
+        <label for="electricity">Electricity usage (kWh per year):</label>
+        <input type="number" id="electricity" name="electricity" required>
+      </div>
+      <div class="form-group">
+        <label for="gas">Natural Gas usage (therms per year):</label>
+        <input type="number" id="gas" name="gas" required>
+      </div>
+      <div class="form-group">
+        <label for="mileage">Mileage driven (miles per year):</label>
+        <input type="number" id="mileage" name="mileage" required>
+      </div>
+      <div class="form-group">
+        <label for="air">Air travel (miles per year):</label>
+        <input type="number" id="air" name="air" required>
+      </div>
+      <button type="submit" class="calc-button">Calculate</button>
+    </form>
+    <div id="result" class="result"></div>
+  </section>
+
+  <!-- 6) Dynamically load the shared header -->
+  <script>
+    fetch('/components/header/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading header:', err));
+  </script>
+
+  <!-- Carbon Footprint Calculator Script -->
+  <script>
+    document.getElementById("footprint-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      // Get input values (default to 0 if empty)
+      var elec = parseFloat(document.getElementById("electricity").value) || 0;
+      var gas = parseFloat(document.getElementById("gas").value) || 0;
+      var mileage = parseFloat(document.getElementById("mileage").value) || 0;
+      var air = parseFloat(document.getElementById("air").value) || 0;
+      
+      // Dummy calculation (using arbitrary conversion factors)
+      // These factors are for demonstration purposes only.
+      var footprint = (elec * 0.0005) + (gas * 0.005) + (mileage * 0.0002) + (air * 0.0003);
+      footprint = footprint.toFixed(2);
+      
+      // Display the result
+      document.getElementById("result").innerHTML = "<h3>Your estimated annual carbon footprint is " + footprint + " metric tons CO₂e.</h3>";
+    });
+  </script>
+</body>
+</html>
