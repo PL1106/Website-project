@@ -1,0 +1,252 @@
+/* about.css */
+
+/* 1) Remove default margin/padding, hide horizontal scroll, fix header */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Fix the header in place at the top */
+#header-placeholder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Push main content down so it's not hidden behind fixed header.
+   Adjust 80px if your header is taller/shorter. */
+.about-hero,
+.about-lower,
+.how-it-works,
+.carbon-calculator {
+  margin-top: 80px;
+}
+
+/* 2) Hero Section */
+.about-hero {
+  background: url("/components/static/images/about.png") no-repeat center center;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about-hero-content {
+  margin-left: 2rem;
+  color: #333;
+}
+.about-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* 3) "About" Two-Column Section */
+.about-lower {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+.left-col {
+  flex: 1;
+  min-width: 300px;
+  background: #357ae8;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.about-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+.left-col h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+.logo-box {
+  margin-top: 1rem;
+}
+.logo-box img {
+  max-width: 150px;
+  height: auto;
+}
+.right-col {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+.right-col h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.right-col p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.right-col ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+.right-col li {
+  margin-bottom: 0.5rem;
+}
+
+/* 4) "How It Works" Section */
+.how-it-works {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+.left-side-steps {
+  flex: 1;
+  min-width: 300px;
+  /* OPTIONAL: Uncomment to make sticky
+  position: sticky;
+  top: 100px;
+  */
+}
+.section-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+.left-side-steps h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+.intro-text {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.steps-container {
+  position: relative;
+  border-left: 2px dotted #ccc;
+  padding-left: 2rem;
+}
+.step {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.step-details h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+.step-details p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+.right-side-steps {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.howitworks-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* 5) Carbon Footprint Calculator Section */
+.carbon-calculator {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.carbon-calculator h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.carbon-calculator p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.carbon-calculator .form-group {
+  margin-bottom: 1rem;
+}
+.carbon-calculator label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.carbon-calculator input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.calc-button {
+  padding: 0.75rem 1.25rem;
+  background: #51c4d3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.result {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* 6) Responsive stacking for small screens */
+@media (max-width: 768px) {
+  .about-lower {
+    flex-direction: column;
+  }
+  .left-col, .right-col {
+    min-width: 100%;
+  }
+  .left-col {
+    margin-bottom: 2rem;
+  }
+  .how-it-works {
+    flex-direction: column;
+  }
+  .right-side-steps {
+    margin-top: 2rem;
+  }
+}
